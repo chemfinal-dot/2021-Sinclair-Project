@@ -14,7 +14,8 @@ There is an alternative formulation
 `LovaszTheta_alt1` which uses the following SDP to solve for ϑ(Γ):
 ![eqn2](https://media.discordapp.net/attachments/830987949671841804/849283740672196668/sdp2.png)
 
-Interestingly, `LovaszTheta` appears to consistently outperform or equal the alternative `LovaszTheta_alt1` in solve time, and as the graph size increases, `LovaszTheta_alt1` appears to take longer to solve. This could be due to the fact that an extra variable is defined for the second formulation.
+`LovaszTheta_alt2` uses the following SDP to solve for ϑ(Γ):
+![eqn3](https://media.discordapp.net/attachments/830987949671841804/851218839935909928/unknown.png)
 
 If other graph related functions appear in our work, they should also be defined here.
 ## graph_generate
