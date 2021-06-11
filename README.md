@@ -7,7 +7,7 @@ These scripts use a few packages:
 To use these packages, I use [Anaconda](https://www.anaconda.com) as a package manager with Python 3.8.10.
 # Description of scripts/methods
 ## graph_funs
-Every definition of the Theta function that is used can be found [here](https://www.overleaf.com/read/shwygrhhpwfy)
+Every definition of the Theta function that is used can be found [here on Overleaf](https://www.overleaf.com/read/shwygrhhpwfy).
 
 If other graph related functions appear in our work, they should also be defined here.
 ## graph_generate
