@@ -7,15 +7,7 @@ These scripts use a few packages:
 To use these packages, I use [Anaconda](https://www.anaconda.com) as a package manager with Python 3.8.10.
 # Description of scripts/methods
 ## graph_funs
-The script `graph_funs.py` defines a method `LovaszTheta` for calculating the Lovasz theta function ϑ(Γ) for a given graph Γ. In order to calculate this, it uses the following SDP formulation:
-![eqn1](https://media.discordapp.net/attachments/830987949671841804/849284311576477696/sdp1.png)
-
-There is an alternative formulation
-`LovaszTheta_alt1` which uses the following SDP to solve for ϑ(Γ):
-![eqn2](https://media.discordapp.net/attachments/830987949671841804/849283740672196668/sdp2.png)
-
-`LovaszTheta_alt2` uses the following SDP to solve for ϑ(Γ):
-![eqn3](https://media.discordapp.net/attachments/830987949671841804/851218839935909928/unknown.png)
+Every definition of the Theta function that is used can be found [here](https://www.overleaf.com/read/shwygrhhpwfy)
 
 If other graph related functions appear in our work, they should also be defined here.
 ## graph_generate
