@@ -1,4 +1,4 @@
-function Theta = QuantumTheta(G)
+function Theta = QuantumThetaT(G)
 %QuantumTheta Computes SDP formulation of Quantum version of the theta
 %             function
 %   Input - adjacency matrix for a graph G, size n x n
@@ -14,8 +14,12 @@ cvx_begin sdp quiet
     variable t;
     for i = 0:(n-1)
         for j = 0:(n-1)
-            if (G(i+1,j+1) == 0) && (i ~= j)
-                X((1+i*n):((i+1)*n),(1+j*n):((j+1)*n)) == -t*Delta((1+i*n):((i+1)*n),(1+j*n):((j+1)*n));
+            for k=1:n
+                for l=1:n
+                    if (G(k,l) == 0) && (k ~= l)
+                        X((i*n)+k,(j*n)+l) == -t*Delta((i*n)+k,(j*n)+l);
+                    end
+                end
             end
         end
     end

@@ -1,18 +1,19 @@
-function Theta = LovTheta1(G)
+function Theta = LovThetaT(G)
 %LovTheta Computes first formulation of Lovasz Theta
 %   Input - adjacency matrix for a graph G, size n x n
 
 [numRows, n] = size(G);
 
 % Construct and solve the model
-J = ones(n);
+%J = ones(n);
 cvx_begin sdp quiet
     variable Y(n,n) semidefinite;
-    trace(Y) == 1;
-    maximize( trace(Y*J) );
+    variable t;
+    trace(Y) == (1-t)*n;
+    maximize( t );
     for i=1:n
         for j=1:n
-            if(G(i,j)==1)
+            if ((G(i,j) == 0) && (i ~= j))
                 Y(i,j) == 0;
             end
         end
@@ -20,7 +21,7 @@ cvx_begin sdp quiet
 cvx_end
 
 
-Theta = (trace(Y*J));
+Theta = 1/t;
 
 end
 
