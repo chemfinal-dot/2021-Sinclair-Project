@@ -1,13 +1,16 @@
-n = 7;
+n = 8;
 %correct_value = theta_cycle(n);
 for N=5:5
-    
-    G = cycle(11);
-    [correct_value, X2] = LovTheta(G);
-    [Theta, X3] = LovTheta2(G);
+    J = ones(n);
+    G = cycle(n);
+    [correct_value, X] = LovTheta2(G);
+    [Theta, A] = LovThetaTest(G);
+    %[Theta_d, A_d] = LovThetaDual(G);
 
     %[Theta, X1] = QuantumTheta(G);
+    fprintf('Lov Theta');
     disp( correct_value );
+    fprintf('Quad Theta');
     disp( Theta );
     
     disp( (Theta - correct_value)/correct_value );

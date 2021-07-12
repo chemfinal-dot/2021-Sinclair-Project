@@ -1,4 +1,4 @@
-function [Theta, X1] = LovThetaTest(G)
+function [Theta, A] = LovThetaTest(G)
 %LovTheta Computes first formulation of Lovasz Theta
 %   Input - adjacency matrix for a graph G, size n x n
 
@@ -26,18 +26,14 @@ cvx_begin sdp quiet
         r = mod(i,n);
         M(n+1+i,n^2+n+1) == M(r+1,q+1);
     end
-    M(n^2+n+1,n^2+n+1) - t == 2*trace(P*M(1:n,1:n))-trace(P*P); 
+    M(n^2+n+1,n^2+n+1) - t == (2*trace(P*M(1:n,1:n))-1*trace(P*P)); 
     
 cvx_end
 
-Theta = t;
-%Theta = (trace((A-G)*(A-G))/n^2)^(-1);
-%for i=1:n
-%    for j=1:n
-%        Theta = Theta + (A(i,j)-G(i,j))^2/n^2;
-%    end
-%end
-%Theta = Theta^(-1)*3/4;
-X1 = M(1:n,1:n);
+
+A = M(1:n,1:n);
+%Theta = t;
+
+Theta = trace(J*A)/n;
 end
 
