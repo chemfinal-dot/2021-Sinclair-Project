@@ -1,4 +1,4 @@
-function M = rand_graph(n,prob)
+function [M,m] = rand_graph(n,prob)
 %RAND_GRAPH Outputs an adjacency matrix of size nxn
 %   prob is a number from 0 to 1 that determines the probability of
 %   assigning an edge
@@ -11,6 +11,6 @@ for i = 1:(n-1)
         end
     end
 end
-
+[numRows, m] = size(M);
 end
 

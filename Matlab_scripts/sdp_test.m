@@ -1,5 +1,5 @@
-lower = 3;
-upper = 3;
+lower = 4;
+upper = 10;
 
 Xlist = linspace(lower,upper,upper-lower+1);
 Y1list = linspace(lower,upper,upper-lower+1);
@@ -9,7 +9,7 @@ Floorlist = linspace(lower,upper,upper-lower+1);
 
 for k=lower:upper
     cd C:\Users\cmgri\Documents\Sinclair_Research\2021-Sinclair-Project\Matlab_scripts\graphs
-    [G,n] = grid(k,k);
+    [G,n] = rand_graph(k,0.5);
     cd C:\Users\cmgri\Documents\Sinclair_Research\2021-Sinclair-Project\Matlab_scripts\
     I = eye(n);
     J = ones(n);
@@ -34,10 +34,10 @@ for k=lower:upper
     %fprintf('Chromatic Number of Cycle:');
     %disp( 2 + mod(n,2) );
     %disp( (Theta - correct_value)/correct_value );
-    disp(K);
-    if ((Theta_Lin-correct_value)>0)
-        break
-    end
+    %if ((Theta_Lin-correct_value)>0)
+    %    break
+    %end
+    disp(k);
     
 end
 %plot1=plot(Xlist, Y1list);

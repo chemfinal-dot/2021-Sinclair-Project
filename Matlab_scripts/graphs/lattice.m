@@ -1,10 +1,9 @@
-function [M,m] = lattice(n1,n2,n3)
+function [M,m,alpha] = lattice(n)
 % Returns lattice graph (i.e. 3D square lattice graph)
 % Independence number = ceil(n^3/2)
-[path1,N1] = path(n1);
-[path2,N2] = path(n2);
-[path3,N3] = path(n3);
-M = cart_product(cart_product(path1,path2),path3);
+[path1,N1,a1] = path(n1);
+M = cart_product(cart_product(path1,path1),path1);
 [numRows, m] = size(M);
+alpha = ceil(n^3/2);
 end
 

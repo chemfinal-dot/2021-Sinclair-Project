@@ -13,6 +13,7 @@ cvx_begin sdp quiet
     minimize( t );
     M(1:n, n+1:n^2+n+1) == zeros(n, n^2+1);
     M(1+n:n^2+n, 1+n:n^2+n) == eye(n^2);
+    %trace(M(1:n,1:n)*eye(n)) == 1;
     for i = 1:n
         for j = 1:n
             M(i,i) == 1;
@@ -34,6 +35,6 @@ cvx_end
 A = M(1:n,1:n);
 %Theta = t;
 
-Theta = trace(J*A)/(n);
+Theta = trace(J*A)/n;
 end
 

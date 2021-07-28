@@ -34,6 +34,6 @@ cvx_end
 A = M(1:n,1:n);
 %Theta = t;
 
-Theta = trace(J*A)/(n);
+Theta = trace(J*A)/n;
 end
 
